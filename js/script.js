@@ -14,9 +14,30 @@ $(document).ready(function(){
 			var _class = $(this).find(".character-class");
 			// remove the class from the party
 			// TODO
+			// loop through all party characters and fiind one withh the same class
+			for ( var i = 0; i < $(".added").length; i++){
+				if($($(".added")[i]).find(".party-character-class").text() == $(this).find(".character-class").text() ){
+					var lastCharacter = $($(".added")[i]);
 
-			charactersLeft += 1;
-			$(".characters-left").text(charactersLeft);
+					lastCharacter.removeClass("added");
+					console.log(lastCharacter);
+
+					charactersLeft += 1;
+					$(".characters-left").text(charactersLeft);
+					
+
+					lastCharacter.find("img").attr("src", "");
+					lastCharacter.find("img").attr("alt", "");
+					lastCharacter.find(".party-character-class").text("");
+					lastCharacter.find("label").text("");
+					lastCharacter.find(".stat-points").text("");
+					lastCharacter.find("input").val(0);
+				}
+			}
+			
+			
+
+
 
 		}
 		// si no tiene la clase active genera al PJ
@@ -34,9 +55,10 @@ $(document).ready(function(){
 
 
 			// add character to the party
-			emptySpacePosition = maxCharaters - charactersLeft;
+			var emptySpacePosition = maxCharaters - charactersLeft;
 			currentEmptySpace = $($(".party-character")[emptySpacePosition]);
 
+			currentEmptySpace.addClass("added");
 			currentEmptySpace.find(".stat-points").text(statsToSet);
 
 			// agregamos la data

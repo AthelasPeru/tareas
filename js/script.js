@@ -58,16 +58,24 @@ $(document).ready(function(){
 		
 		var container = $(this).parents(".stats-container")
 		
+		
 		var spentPoints = 0;
 		for(var i = 0; i < container.find("input").length; i++){
 			// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
 			var inputValue = new Number(container.find("input")[i].value);
 						
 			spentPoints += inputValue;
+
 		}
-		console.log("gastados: ", spentPoints);
-		console.log(statsToSet - spentPoints);
-		container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+		if(spentPoints >= 0  && spentPoints <= 9){
+			console.log("gastados: ", spentPoints);
+			console.log(statsToSet - spentPoints);
+			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+		}
+		else {
+			alert("No more points to spend!!");
+		}
+		
 		
 		
 	});

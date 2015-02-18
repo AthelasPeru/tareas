@@ -9,8 +9,17 @@ $mage_color: blue;
 	@extend .character;
 	border-color: $color;
 	background-color: $color + 125;
+
 	&.active{
 		border-color: $color - 100; 
+	}
+	ul{
+		margin-left: 0;
+	}
+
+	li{
+		list-style: none;
+		font-size: 0.6em;
 	}
 }
 

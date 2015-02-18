@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation</title>
+    <title>Party Builder</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
     <link rel="stylesheet" href="stylesheets/style.css">
     <script src="bower_components/modernizr/modernizr.js"></script>
@@ -20,94 +20,115 @@
         <div class="panel">
           <h3>Select your characters </h3>
           <p>You can select up to 3 characters for your party, think carefully</p>
+          <h4>Number of characters left: <span class="characters-left">3</span></h4>
+
           <div class="row">
-            <div class="large-4 medium-4 small-12 columns  character warrior">
+          <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-4">
+            <li>
+            <div class="small-12 columns  character warrior">
               <div class="row">
                 <img src="images/hero.png" alt="" class="small-6 columns">
                 <div class="character-data small-6 columns">
                   <h4 class="character-class">Warrior</h4>
                   <ul>
-                    <li class="stat stat1">st</li>
-                    <li class="stat stat2">co</li>
-                    <li class="stat stat3">sd</li>
+                    <li class="stat stat1" value="st">strength</li>
+                    <li class="stat stat2" value="co">constitution</li>
+                    <li class="stat stat3" value="sd">self discipline</li>
                   </ul>
                 </div>
               </div>
-
             </div>
-            <div class="large-4 medium-4 small-12 columns character rogue">
-              <div class="row">
-                <img src="images/hero.png" alt="" class="small-6 columns">
-                <div class="character-data small-6 columns">
-                  <h4 class="character-class">Rogue</h4>
-                  <ul>
-                    <li class="stat stat1">ag</li>
-                    <li class="stat stat2">pr</li>
-                    <li class="stat stat3">in</li>
-                  </ul>
+            </li>
+            <li>
+              <div class="small-12 columns character rogue">
+                <div class="row">
+                  <img src="images/hero.png" alt="" class="small-6 columns">
+                  <div class="character-data small-6 columns">
+                    <h4 class="character-class">Rogue</h4>
+                    <ul>
+                      <li class="stat stat1" value="ag">agility</li>
+                      <li class="stat stat2" value="pr">prescence</li>
+                      <li class="stat stat3" value="in">intuition</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
-            </div>
-            <div class="large-4 medium-4 small-12 columns character mage">
-              <div class="row">
-                <img src="images/hero.png" alt="" class="small-6 columns">
-                <div class="character-data small-6 columns">
-                  <h4 class="character-class">Mage</h4>
-                  <ul>
-                    <li class="stat stat1">in</li>
-                    <li class="stat stat2">int</li>
-                    <li class="stat stat3">will</li>
-                  </ul>
+              </div>
+            </li>
+            <li>
+              <div class="small-12 columns character mage">
+                <div class="row">
+                  <img src="images/hero.png" alt="" class="small-6 columns">
+                  <div class="character-data small-6 columns">
+                    <h4 class="character-class">Mage</h4>
+                    <ul>
+                      <li class="stat stat1" value="in">intuition</li>
+                      <li class="stat stat2" value="int">intelligence</li>
+                      <li class="stat stat3" value="will">will</li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
 
-            </div>
+              </div>
+            </li>
+            <li>
+              <div class=" small-12 columns character priest">
+                <div class="row">
+                  <img src="images/hero.png" alt="" class="small-6 columns">
+                  <div class="character-data small-6 columns">
+                    <h4 class="character-class">Priest</h4>
+                    <ul>
+                      <li class="stat stat1" value="sd">self discipline</li>
+                      <li class="stat stat2" value="will">will</li>
+                      <li class="stat stat3" value="in">intuition</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class=" small-12 columns character thief">
+                <div class="row">
+                  <img src="images/hero.png" alt="" class="small-6 columns">
+                  <div class="character-data small-6 columns">
+                    <h4 class="character-class">Thief</h4>
+                    <ul>
+                      <li class="stat stat1" value="sd">self discipline</li>
+                      <li class="stat stat2" value="in">intuition</li>
+                      <li class="stat stat3" value="ag">agility</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            <li>
+              <div class="small-12 columns character bard">
+                <div class="row">
+                  <img src="images/hero.png" alt="" class="small-6 columns">
+                  <div class="character-data small-6 columns">
+                    <h4 class="character-class">Bard</h4>
+                    <ul>
+                      <li class="stat stat1" value="pr">prescence</li>
+                      <li class="stat stat2" value="will">will</li>
+                      <li class="stat stat3" value="in">intuition</li>
+                    </ul>
+                  </div>
+                </div>
+
+              </div> 
+            </li>
+          </ul>
+            
+            
+            
                   
-          </div>
-          <div class="row">
-            <div class="large-4 medium-4 small-12 columns character priest">
-              <div class="row">
-                <img src="images/hero.png" alt="" class="small-6 columns">
-                <div class="character-data small-6 columns">
-                  <h4 class="character-class">Priest</h4>
-                  <ul>
-                    <li class="stat stat1">sd</li>
-                    <li class="stat stat2">will</li>
-                    <li class="stat stat3">in</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-            <div class="large-4 medium-4 small-12 columns character thief">
-              <div class="row">
-                <img src="images/hero.png" alt="" class="small-6 columns">
-                <div class="character-data small-6 columns">
-                  <h4 class="character-class">Thief</h4>
-                  <ul>
-                    <li class="stat stat1">sd</li>
-                    <li class="stat stat2">in</li>
-                    <li class="stat stat3">ag</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>
-            <div class="large-4 medium-4 small-12 columns character bard">
-              <div class="row">
-                <img src="images/hero.png" alt="" class="small-6 columns">
-                <div class="character-data small-6 columns">
-                  <h4 class="character-class">Bard</h4>
-                  <ul>
-                    <li class="stat stat1">pr</li>
-                    <li class="stat stat2">will</li>
-                    <li class="stat stat3">in</li>
-                  </ul>
-                </div>
-              </div>
-
-            </div>  
+          
+         
+            
+            
+             
           </div>
         </div>
       </div>
@@ -115,6 +136,7 @@
 
     <div class="row">
       <div class="small-12 columns">
+      <h2>Party</h2>
         <div class="panel">
           <div class="party-container">
             

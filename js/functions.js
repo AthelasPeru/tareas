@@ -1,5 +1,6 @@
 function addCharTemplate(selector, character){
-	selector.html(
+	selector.append(
+		'<li class="'+character._class+'">'+
 		'<img src="'+ character.img + '" alt="' +character._class +'" class="charImg small-6 columns">'+
 		'<div class="small-6 columns">'+
 		  
@@ -17,8 +18,13 @@ function addCharTemplate(selector, character){
 		  '<label for="" class="small-6 columns">' + character.stat3 + '</label>' +
 		  '<input type="number" class="small-6 columns">'+
 		  '<button class=" tiny right setCharacter">finish</button>'+
-		'</div>'
+		'</div>'+
+		'</li>'
 
 	);
 	
+}
+
+function removeCharTemplate(selector, _class){
+	selector.find('.'+_class).remove();
 }

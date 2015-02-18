@@ -14,6 +14,8 @@ $(document).ready(function(){
 			// actualizamos el límite de PJ's
 			charactersLeft += 1;
 			$(".characters-left").text(charactersLeft);
+			// borramos al PJ
+			removeCharTemplate($(".party-container ul"), $(this).find(".character-class").text());
 
 
 		}
@@ -29,7 +31,9 @@ $(document).ready(function(){
 			character.img = $(this).find("img").attr("src");
 			console.log(character);
 
-			addCharTemplate($(".party-container li"), character);
+
+			// agregamos el PJ
+			addCharTemplate($(".party-container ul"), character);
 
 			
 

@@ -1,0 +1,45 @@
+$warrior_color : red;
+$rogue_color : yellow;
+$priest_color: green;
+$bard_color: purple;
+$thief_color: grey;
+$mage_color: blue;
+
+@mixin character($color){
+	@extend .character;
+	border-color: $color;
+	background-color: $color + 125;
+	&.active{
+		border-color: $color - 100; 
+	}
+}
+
+.character{
+	border: 3px solid #fff;
+	background: grey;
+	cursor: pointer;
+}
+
+.warrior{
+	@include character($warrior_color)
+}
+
+.rogue{
+	@include character($rogue_color)
+}
+
+.mage{
+	@include character($mage_color);
+}
+
+.priest{
+	@include character($priest_color);
+}
+
+.thief{
+	@include character($thief_color);
+}
+
+.bard{
+	@include character($bard_color);
+}

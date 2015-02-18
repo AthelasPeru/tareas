@@ -52,3 +52,13 @@ $mage_color: blue;
 .bard{
 	@include character($bard_color);
 }
+
+
+.party-character{
+	@extend .character;
+	cursor: default; 
+}
+
+.party-character-stats li{
+	list-style: none;
+}

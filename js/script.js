@@ -33,7 +33,7 @@ $(document).ready(function(){
 
 
 			// agregamos el PJ
-			addCharTemplate($(".party-container ul"), character);
+			addCharTemplate($(".party-container ul"), character, statsToSet);
 
 			
 
@@ -53,9 +53,21 @@ $(document).ready(function(){
 		$(this).toggleClass("active");
 	});
 
-	$("input[type='number'").on("change", function(){
+	$(".party-container").on("change", ".stat",function(){
 		
-		console.log("cambié");
+		
+		var container = $(this).parents(".stats-container")
+		
+		var spentPoints = 0;
+		for(var i = 0; i < container.find("input").length; i++){
+			// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
+			var inputValue = new Number(container.find("input")[i].value);
+						
+			spentPoints += inputValue;
+		}
+		console.log("gastados: ", spentPoints);
+		console.log(statsToSet - spentPoints);
+		container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
 		
 		
 	});

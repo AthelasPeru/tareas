@@ -67,3 +67,30 @@ $mage_color: blue;
 	width: 50%;
 }
 
+.statValue{
+	line-height: 2em;
+}
+
+.statControls{
+	padding: 0;
+	border: 1px solid grey;
+}
+.statControls div{
+	line-height: 1em;	
+	text-align: center;
+	cursor: pointer;
+
+}
+
+.plus{
+	@extend .statControls;
+	background: green + 125;
+	border-color: green;
+}
+
+.minus{
+	@extend .statControls;
+	background: red + 125;
+	border-color: red;
+}
+

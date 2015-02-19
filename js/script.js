@@ -52,28 +52,35 @@ $(document).ready(function(){
 
 		$(this).toggleClass("active");
 	});
+	
 
-	$(".party-container").on("change", ".stat",function(){
+	// controles de + y -
+	$(".party-container").on("click", ".plus",function(){
 		
 		
 		var container = $(this).parents(".stats-container")
 		
 		
-		var spentPoints = 0;
-		for(var i = 0; i < container.find("input").length; i++){
-			// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
-			var inputValue = new Number(container.find("input")[i].value);
-						
-			spentPoints += inputValue;
-
-		}
+		var spentPoints = statsToSet - parseInt($(".remainingPoints").text());
 		if(spentPoints >= 0  && spentPoints <= 9){
-			console.log("gastados: ", spentPoints);
-			console.log(statsToSet - spentPoints);
-			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+			$(this).parent().prev().text(parseInt($(this).parent().prev().text()) + 1);
+			for(var i = 0; i < container.find(".statValue").length; i++){
+				// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
+				var inputValue = new Number($(container.find(".statValue")[i]).text());
+				
+				
+				console.log("mira:", spentPoints);
+
+			}
+			spentPoints++;
+			
+				/*console.log("gastados: ", spentPoints);
+				console.log(statsToSet - spentPoints);*/
+				container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
 		}
 		else {
 			alert("No more points to spend!!");
+			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
 		}
 		
 		

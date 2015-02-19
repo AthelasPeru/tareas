@@ -10,13 +10,25 @@ function addCharTemplate(selector, character, statsLimit){
 		'<div class="stats-container small-12 columns">'+
 		  '<h5 class="toSpentPoints">Points to spend: <span class="remainingPoints">' + statsLimit + '</span></h5>'+
 		  '<label for="" class="small-6 columns">' + character.stat1 + '</label>'+
-		  '<input type="number" vaule="0" class="stat stat1 small-6 columns">'+
+		  '<div class="statValue small-4 columns">0</div>'+
+              '<div class="statControls small-2 columns">'+
+                '<div class="plus">+</div>'+
+               '<div class="minus">-</div>'+
+              '</div>'+
 		  
 		  '<label for="" class="small-6 columns">'+character.stat2 +'</label>'+
-		  '<input type="number" vaule="0" class="stat stat2 small-6 columns">'+
+		  '<div class="statValue small-4 columns">0</div>'+
+		    '<div class="statControls small-2 columns collapsed">'+
+		    '<div class="plus">+</div>'+
+		    '<div class="minus">-</div>'+
+		    '</div>'+
 
 		  '<label for="" class="small-6 columns">' + character.stat3 + '</label>' +
-		  '<input type="number" vaule="0" class="stat stat3 small-6 columns">'+
+		  '<div class="statValue small-4 columns">0</div>'+
+              '<div class="statControls small-2 columns">'+
+                '<div class="plus">+</div>'+
+               '<div class="minus">-</div>'+
+              '</div>'+
 		  '<button class=" tiny right setCharacter">finish</button>'+
 		'</div>'+
 		'</li>'
@@ -28,3 +40,4 @@ function addCharTemplate(selector, character, statsLimit){
 function removeCharTemplate(selector, _class){
 	selector.find('.'+_class).remove();
 }
+

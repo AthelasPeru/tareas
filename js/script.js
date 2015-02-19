@@ -60,8 +60,9 @@ $(document).ready(function(){
 		
 		var container = $(this).parents(".stats-container");
 		
-		
-		var spentPoints = statsToSet - parseInt($(".remainingPoints").text());
+		var counter = $(this).parent().siblings(".toSpendPoints").find(".remainingPoints");
+		console.log(counter);
+		var spentPoints = statsToSet - parseInt($(this).parent().siblings(".toSpendPoints").find(".remainingPoints").text());
 		if(spentPoints >= 0  && spentPoints <= 9){
 			$(this).parent().prev().text(parseInt($(this).parent().prev().text()) + 1);
 			for(var i = 0; i < container.find(".statValue").length; i++){
@@ -86,7 +87,7 @@ $(document).ready(function(){
 	});
 	$(".party-container").on("click", ".minus", function(){
 		var container = $(this).parents(".stats-container");
-		var spentPoints = statsToSet - parseInt($(".remainingPoints").text());
+		var spentPoints = statsToSet - parseInt($(this).parent().siblings(".toSpendPoints").find(".remainingPoints").text());
 		if(spentPoints < 10 && spentPoints > 0){
 			$(this).parent().prev().text(parseInt($(this).parent().prev().text()) - 1);
 			for(var i = 0; i < container.find(".statValue").length; i++){

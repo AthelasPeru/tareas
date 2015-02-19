@@ -8,7 +8,7 @@ function addCharTemplate(selector, character, statsLimit){
 		  '<h5 class="charClass">' + character._class + '</h5>'+
 		'</div>'+
 		'<div class="stats-container small-12 columns">'+
-		  '<h5 class="toSpentPoints">Points to spend: <span class="remainingPoints">' + statsLimit + '</span></h5>'+
+		  '<h5 class="toSpendPoints">Points to spend: <span class="remainingPoints">' + statsLimit + '</span></h5>'+
 		  '<label for="" class="small-6 columns">' + character.stat1 + '</label>'+
 		  '<div class="statValue small-4 columns">0</div>'+
               '<div class="statControls small-2 columns">'+

@@ -58,7 +58,7 @@ $(document).ready(function(){
 	$(".party-container").on("click", ".plus",function(){
 		
 		
-		var container = $(this).parents(".stats-container")
+		var container = $(this).parents(".stats-container");
 		
 		
 		var spentPoints = statsToSet - parseInt($(".remainingPoints").text());
@@ -82,8 +82,25 @@ $(document).ready(function(){
 			alert("No more points to spend!!");
 			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
 		}
-		
-		
-		
+
 	});
+	$(".party-container").on("click", ".minus", function(){
+		var container = $(this).parents(".stats-container");
+		var spentPoints = statsToSet - parseInt($(".remainingPoints").text());
+		if(spentPoints < 10 && spentPoints > 0){
+			$(this).parent().prev().text(parseInt($(this).parent().prev().text()) - 1);
+			for(var i = 0; i < container.find(".statValue").length; i++){
+				// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
+				var inputValue = new Number($(container.find(".statValue")[i]).text());
+				
+				
+				console.log("mira:", spentPoints);
+			}
+			spentPoints--;
+			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+		} else {
+			alert("All your points have been returned");
+			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+		}
+	})
 });

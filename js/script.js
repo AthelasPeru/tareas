@@ -89,16 +89,22 @@ $(document).ready(function(){
 		var container = $(this).parents(".stats-container");
 		var spentPoints = statsToSet - parseInt($(this).parent().siblings(".toSpendPoints").find(".remainingPoints").text());
 		if(spentPoints < 10 && spentPoints > 0){
-			$(this).parent().prev().text(parseInt($(this).parent().prev().text()) - 1);
-			for(var i = 0; i < container.find(".statValue").length; i++){
-				// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
-				var inputValue = new Number($(container.find(".statValue")[i]).text());
-				
-				
-				console.log("mira:", spentPoints);
+			var pointsBox = $(this).parent().prev();
+			if ( parseInt(pointsBox.text()) > 0){
+				pointsBox.text(parseInt($(this).parent().prev().text()) - 1);
+				for(var i = 0; i < container.find(".statValue").length; i++){
+					// lo hago así ya que el constructor de Number transforma automáticamente el string en number y el"vacio" en 0
+					var inputValue = new Number($(container.find(".statValue")[i]).text());
+					
+					
+					console.log("mira:", spentPoints);
+				}
+				spentPoints--;
+				container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+			} else {
+				alert("That skill hans't got any asigned points");
 			}
-			spentPoints--;
-			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
+			
 		} else {
 			alert("All your points have been returned");
 			container.find(".remainingPoints").text(parseInt(statsToSet) - parseInt(spentPoints));
